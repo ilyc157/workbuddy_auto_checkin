@@ -333,7 +333,7 @@ def push_feishu(webhook, title, checkin_line, buddy_line, overall_ok):
 # ---------------------------------------------------------------- 主流程
 
 def main():
-    token = os.environ.get("WB_ACCESS_TOKEN")
+    token = (os.environ.get("WB_ACCESS_TOKEN") or "").strip()
     webhook = os.environ.get("FEISHU_WEBHOOK")
     endpoint = os.environ.get("WB_ENDPOINT") or DEFAULT_ENDPOINT
 
